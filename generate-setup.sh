@@ -5,6 +5,7 @@ mkdir uaa bookservice orderservice gateway kubernetes
 cd uaa
 yarn link generator-jhipster
 yo jhipster --with-entities
+yarn link generator-jhipster
 cat > customers.jh <<- EOM
 entity Customer {
     streetName String,
@@ -27,6 +28,7 @@ yo jhipster:import-jdl customers.jh --force
 cd ../bookservice
 yarn link generator-jhipster
 yo jhipster --with-entities
+yarn link generator-jhipster
 cat > books.jh <<- EOM
 entity Book {
     title String required,
@@ -50,6 +52,7 @@ yo jhipster:import-jdl books.jh --force
 cd ../orderservice
 yarn link generator-jhipster
 yo jhipster --with-entities
+yarn link generator-jhipster
 cat > orders.jh <<- EOM
 
 enum OrderStatus {
@@ -76,7 +79,10 @@ yo jhipster:import-jdl orders.jh --force
 cd ../gateway
 yarn link generator-jhipster
 yo jhipster --with-entities
+yarn link generator-jhipster
 cp ../app.jh .
 yo jhipster:import-jdl app.jh --force
 ./gradlew -P prod -P prometheus -x test build buildDocker
+cd ../docker
+yo jhipster:docker-compose --force
 
