@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir uaa bookservice orderservice gateway kubernetes
+mkdir docker kubernetes
 
 cd uaa
 yarn link generator-jhipster
@@ -85,4 +85,5 @@ yo jhipster:import-jdl app.jh --force
 ./gradlew -P prod -P prometheus -x test build buildDocker
 cd ../docker
 yo jhipster:docker-compose --force
-
+cd ../kubernetes
+yo jhipster:kubernetes
