@@ -4,7 +4,7 @@
       "packageName": "com.mycompany.myapp",
       "nativeLanguage": "en"
     },
-    "jhipsterVersion": "4.5.3",
+    "jhipsterVersion": "4.9.0",
     "baseName": "uaa",
     "packageName": "com.mycompany.myapp",
     "packageFolder": "com/mycompany/myapp",
@@ -21,7 +21,8 @@
     "serviceDiscoveryType": "eureka",
     "buildTool": "gradle",
     "enableSocialSignIn": false,
-    "jwtSecretKey": "40becb0a2e839b0f3e863219c5173b136b97f30c",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "398eb41f1709e1b87506ce8205d27cfec8903296",
     "enableTranslation": true,
     "applicationType": "uaa",
     "testFrameworks": [],

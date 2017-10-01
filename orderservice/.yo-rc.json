@@ -4,7 +4,7 @@
       "packageName": "com.mycompany.myapp",
       "nativeLanguage": "en"
     },
-    "jhipsterVersion": "4.5.3",
+    "jhipsterVersion": "4.9.0",
     "baseName": "orderservice",
     "packageName": "com.mycompany.myapp",
     "packageFolder": "com/mycompany/myapp",

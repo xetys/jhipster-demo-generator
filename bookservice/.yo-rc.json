@@ -4,7 +4,7 @@
       "packageName": "com.mycompany.myapp",
       "nativeLanguage": "en"
     },
-    "jhipsterVersion": "4.5.3",
+    "jhipsterVersion": "4.9.0",
     "baseName": "bookservice",
     "packageName": "com.mycompany.myapp",
     "packageFolder": "com/mycompany/myapp",
@@ -22,7 +22,8 @@
     "serviceDiscoveryType": "eureka",
     "buildTool": "gradle",
     "enableSocialSignIn": false,
-    "jwtSecretKey": "40fab39e697abc5f54197c06b53e24e39e508e30",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "df5f1b0a40ffc963f8a00bda04d1707c0c2f0934",
     "enableTranslation": true,
     "applicationType": "microservice",
     "testFrameworks": [],
