@@ -4,7 +4,7 @@ mkdir docker kubernetes
 
 cd uaa
 yarn link generator-jhipster
-yo jhipster --with-entities
+jhipster --with-entities
 yarn link generator-jhipster
 cat > customers.jh <<- EOM
 entity Customer {
@@ -23,11 +23,11 @@ relationship OneToOne {
 }
 
 EOM
-yo jhipster:import-jdl customers.jh --force
+jhipster import-jdl customers.jh --force
 ./gradlew -P prod -P prometheus -x test build buildDocker
 cd ../bookservice
 yarn link generator-jhipster
-yo jhipster --with-entities
+jhipster --with-entities
 yarn link generator-jhipster
 cat > books.jh <<- EOM
 entity Book {
@@ -47,11 +47,11 @@ relationship ManyToOne {
 }
 
 EOM
-yo jhipster:import-jdl books.jh --force
+jhipster import-jdl books.jh --force
 ./gradlew -P prod -P prometheus -x test build buildDocker
 cd ../orderservice
 yarn link generator-jhipster
-yo jhipster --with-entities
+jhipster --with-entities
 yarn link generator-jhipster
 cat > orders.jh <<- EOM
 
@@ -74,16 +74,16 @@ relationship ManyToMany {
     BookOrder{book} to BookHolder{order}
 }
 EOM
-yo jhipster:import-jdl orders.jh --force
+jhipster import-jdl orders.jh --force
 ./gradlew -P prod -P prometheus -x test build buildDocker
 cd ../gateway
 yarn link generator-jhipster
-yo jhipster --with-entities
+jhipster --with-entities --skip-install
 yarn link generator-jhipster
 cp ../app.jh .
-yo jhipster:import-jdl app.jh --force
+jhipster import-jdl app.jh --force --skip-install
 ./gradlew -P prod -P prometheus -x test build buildDocker
 cd ../docker
-yo jhipster:docker-compose --force
+jhipster docker-compose --force
 cd ../kubernetes
-yo jhipster:kubernetes
+jhipster kubernetes
